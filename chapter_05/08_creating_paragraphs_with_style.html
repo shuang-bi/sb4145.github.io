@@ -17,7 +17,13 @@
 				.text(function(d) {
 					return "I can count up to " + d;
 				})
-				.style("color", "red");//the text is now red
+				.style("color", function(d) {
+					if (d > 15) { //Threshold of 15
+					return "red";
+					} else {
+					return "black";
+					}
+				});//the text is now red
 			
 		</script>
 	</body>
