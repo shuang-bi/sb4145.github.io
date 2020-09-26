@@ -11,6 +11,26 @@
       //use what you have learned so far to load the file of density and income data in the data folder in this chapter
       //file name is "density_income_ny_counties.csv"
       //see 03 for loading
+      var dataset = d3.csv("data/density_income_ny_counties.csv")
+      .then(function(data){
+        console.log(data)
+      });
+      var dataset2= [1,2,3];
+    
+      d3.select("body").selectAll("p")
+         .data(dataset)
+         .enter()
+			.append("p")
+			.text(function(d) {
+					return d.Geo_NAME;
+         })
+         .style("color", function(d) {
+                    if (parseFloat(d.median_income)>65,323) { 
+                        return "red";
+                    } else {
+                        return "black";
+                    }
+         });   
       
       
       //make a paragraph for each county, and set the name of the county as its text

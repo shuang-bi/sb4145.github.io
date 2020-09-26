@@ -8,7 +8,9 @@
 	<body>
 		<script type="text/javascript">
 
-			d3.csv("data/food.csv") 
+      var dataset;
+
+			dataset = d3.csv("data/food.csv") 
       .then(function(data) {
         // data is now whole data set from your food.csv file
         
@@ -26,6 +28,16 @@
            // handle error
       })
 
+      d3.select("body").selectAll("p")
+				.data(dataset)
+				.enter()
+				.append("p")
+				.text(function(d) {
+          d.forEach(function(element){
+            return element.food;
+          });
+          
+				})
 		</script>
 	</body>
 </html>

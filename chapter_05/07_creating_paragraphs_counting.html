@@ -15,12 +15,12 @@
 				.enter()
 				.append("p")
 				.text(function(d) {
-					return "I can count up to " + d;//same as previous 2 examples but now a sentence is added to the dataset each time
-				}
-				.style("color", "red")
-				);
-				
-
+					if (d<20) {
+						return "I can count up to " + d;//same as previous 2 examples but now a sentence is added to the dataset each time
+					} else {
+					return "I can't count "+ d;
+					}
+				});
 			
 		</script>
 	</body>
