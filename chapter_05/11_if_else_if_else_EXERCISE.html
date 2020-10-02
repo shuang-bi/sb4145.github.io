@@ -56,11 +56,15 @@
                         }
                     */
                 .style("color", function(d) {
-                    if (d > 15) { //Threshold of 15
+                    if (d % 3 == 0 && d % 5 == 0) { 
+                        return "green";
+                    } else if(d % 3 == 0){
+                        return "blue";
+                    } else if(d % 5 == 0){
                         return "red";
                     } else {
-                        return "black";
-                        }
+                        return "black"
+                    }
                 })
                     
                                         
